@@ -1,7 +1,7 @@
 CC = gcc
 FLAGS = -Wall
 OFLAGS = $(FLAGS) -c
-OBJECTS = bithacks.o hilbert.o container.o
+OBJECTS = bithacks.o hilbert.o
 DEPS =
 SOURCES = $(OBJECTS:.o=.c)
 LINKER = $(OBJECTS)
@@ -9,6 +9,8 @@ PWD = $(shell pwd)
 
 %.o: %.c
 	$(CC) $(OFLAGS) $< -o $@
+
+all: hilbert.o
 
 #The following are simple test programs
 bin/draw_quads: $(OBJECTS) $(DEPS) play/draw_quads.c

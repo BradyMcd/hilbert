@@ -163,7 +163,7 @@ bool hil_is_edgecase( uint8_t recursions, uint64_t d, uint64_t d_ ){
 
   uint64_t mask = 3 << ( ( recursions - 1 ) * 2 );
 
-  if( MAX(d, d_) & mask == mask && MIN(d, d_) & mask == 0 ){
+  if( ( MAX(d, d_) & mask ) == mask && ( MIN(d, d_) & mask ) == 0 ){
     return true;
   }
   return false;
