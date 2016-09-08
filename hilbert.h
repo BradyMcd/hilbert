@@ -15,6 +15,7 @@ uint64_t hil_iterative_c2d( uint8_t, struct hil_Point );
 
 uint8_t hil_ideal( struct hil_Point, bool );
 struct hil_Point hil_clobber( uint8_t, struct hil_Point, struct hil_Point );
-uint64_t hil_rotation( uint8_t, uint64_t );
+
+bool hil_is_edgecase( uint8_t, uint64_t, uint64_t );
 
 #endif//_HILBERT_H
