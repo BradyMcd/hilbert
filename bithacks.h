@@ -20,6 +20,4 @@ uint8_t bithack_highest_bit( uint32_t );
 bool bithack_is_2s_power( uint32_t );
 uint8_t bithack_bitcount( uint32_t );
 
-
-
 #endif//_BITHACKS_H
