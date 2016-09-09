@@ -1,6 +1,4 @@
 
-//TODO: Add more colours, maybe by way of a precomputed colour table of bright, contrasting colours
-
 #include <stdlib.h>
 #include <stdint.h>
 #include <stdio.h>
