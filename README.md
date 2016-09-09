@@ -8,12 +8,14 @@ distance of some point *p* along the curve then the difference *d* - *d'* will b
 small if the distance between *p* and *p'* is also small. This property is relatively
 coarse and so is best used in cases where error can be tolerated or at least in cases
 where the comparisons you want aren't extremely exact. Questions like "are these points
-in the same eighth of the plane" will be answered more or less accurately, further
-experimentation can be done using the utilities built with `make play`.
+clustered together" will be answered more or less accurately while questions like "Which
+of these clustered points are nearest neighbors" will probably not yield accurate
+answers. Further experimentation can be done using the utilities built with `make play`.
 One obvious edge case exists, even points which literally touch will have massive *d*
 value differences if they are split between the first and final quadrant. This can be
 mostly remedied by also comparing *d* values along a Hilbert curve which has been
-somehow offset, rotated or reflected along the vertical axis.
+somehow offset, rotated or reflected along the vertical axis and detecting which
+quadrant a d-value corresponds to is quite easy.
 
 ###What's here
 
@@ -26,6 +28,7 @@ somehow offset, rotated or reflected along the vertical axis.
 
 * Fast rotation, I've taken a few cracks at the magic number for fast rotation but I don't quite have the general case yet
 * Rectangular plane support, there is a way to do it
+* An interface to cleanly work with play utilities
 
 ##Play utilities
 
@@ -34,4 +37,4 @@ is followed by an argument related to the level of recursion you want to look at
 Both `draw` and `draw_quads` require cairo be installed, they create png images.
 `draw` accepts a second argument, the side length of the image created and
 `draw_quads` accepts up to 4 arguments, the level of recursion, the number of sections
-up to 8, the side length of the image and optionally an offset.
+up to 16, the side length of the image and optionally an offset.
